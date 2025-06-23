@@ -1,0 +1,1 @@
+FILE_PATH = 'log.json' #change to your json log file

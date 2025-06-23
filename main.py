@@ -1,7 +1,5 @@
-import scapy
-from colorama import Fore, Style, init
-from logger import logging
-from sniffer import sniff
+from logger import view
+from sniffer import sniffing
 
 def main():
     print("\n")
@@ -9,15 +7,17 @@ def main():
     print("- Foundational tool to help detect suspicious traffic patterns.\n")
     print("- Sniff packets and save packet data in structured JSON\n")
 
-    print("1. Begin Packet Sniff")
+    print("1. Packet Sniff (20 packets)")
     print("2. View logged packets")
     print("3. Quit")
     choice = input("Choose an option: ").strip()
 
     if choice == "1":
-        sniff()
+        sniffing()
+        main()
     elif choice == "2":
-        logging()
+        view()
+        main()
     elif choice == "3":
         print("Goodbye!\n")
         exit()
@@ -27,5 +27,4 @@ def main():
 
 
 if __name__ == "__main__":
-        init(autoreset=True)
         main()
